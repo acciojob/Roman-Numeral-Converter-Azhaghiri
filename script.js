@@ -10,11 +10,25 @@ function convertToRoman(num) {
     };
 
   //your code here
+	let roman = ''; // This will hold the resulting Roman numeral
 
+  // Iterate through the object by its keys (from index 0 to 6)
+  for (let i = 0; i <= 6; i++) {
+    let symbol = obj[i][0]; // Roman numeral symbol
+    let value = obj[i][1];  // Corresponding value
+    
+    // Add the current Roman numeral to the result string while num >= value
+    while (num >= value) {
+      roman += symbol; // Append the symbol to the Roman numeral string
+      num -= value;    // Subtract the value from num
+    }
+  }
+
+  return roman;
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
-// console.log(convertToRoman(36));
+ console.log(convertToRoman(36));
 
 
 
